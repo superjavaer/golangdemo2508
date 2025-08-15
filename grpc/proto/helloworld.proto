@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package helloworld;
-option go_package = "example.com/grpc-demo/proto;proto";
+option go_package = "github.com/miao/awesomeProject1/grpc/proto;proto";
 
 // 定义服务
 service Greeter {
