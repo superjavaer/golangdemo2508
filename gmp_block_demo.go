@@ -2,10 +2,8 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 import _ "net/http/pprof"
-import "net/http"
 
 func worker(ch <-chan int) {
 	for v := range ch {
@@ -28,12 +26,12 @@ func worker(ch <-chan int) {
 //		time.Sleep(time.Hour)
 //	}
 func main() {
-	go func() {
-		http.ListenAndServe("localhost:6060", nil)
-	}()
-	ch := make(chan int)
-	go func() {
-		ch <- 1 // 没人接收，永久阻塞
-	}()
-	time.Sleep(time.Hour)
+	//go func() {
+	//	http.ListenAndServe("localhost:6060", nil)
+	//}()
+	//ch := make(chan int)
+	//go func() {
+	//	ch <- 1 // 没人接收，永久阻塞
+	//}()
+	//time.Sleep(time.Hour)
 }
